@@ -1,4 +1,4 @@
-import json #imports JSON module
+import json # Imports JSON module
 from bike import Bike
 class Warehouse:
 
@@ -66,9 +66,6 @@ class Warehouse:
             bike.print_bike_info()
 
         print()
-
-
-
 
 if __name__=="__main__":
     my_warehouse = Warehouse()
