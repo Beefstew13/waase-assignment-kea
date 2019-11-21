@@ -43,7 +43,7 @@ class Bike:
             'description': self.description,
             'count': self.count
         }
- 
+
 
 if __name__ == '__main__':
     bike = Bike('my Bike', 100, 'bla', 123)

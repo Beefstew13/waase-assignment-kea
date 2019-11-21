@@ -1,4 +1,4 @@
-import json
+import json #imports JSON module
 from bike import Bike
 class Warehouse:
 
@@ -11,12 +11,12 @@ class Warehouse:
         for bike in self.stock:
             bikes.append(bike.toJSON())
         return bikes
-        
+
 
     def _read_stock(self,filename='bikes.json'):
 
         f = open(filename, "r")
-        content = f.read() 
+        content = f.read()
         f.close()
         stock_list_bikes=[]
         if content:
@@ -30,7 +30,7 @@ class Warehouse:
     def _save_stock(self,filename='bikes.json'):
         f = open(filename, "w") #removes whole content of the file
         content = json.dumps(self.toJSON()) # convert list to the json string
-        f.write(content) 
+        f.write(content)
         f.close()
 
     def _print_item(self,index):
@@ -45,7 +45,7 @@ class Warehouse:
             bike = Bike(model,price,description,count)
             self.stock.append(bike)
             self._save_stock()
-        
+
     def change_price(self,model,new_price):
         index  = self.find_bike_by_model(model)
         if(index != -1):
@@ -64,7 +64,7 @@ class Warehouse:
         print("Welcome to the Warehouse:")
         for bike in self.stock:
             bike.print_bike_info()
-        
+
         print()
 
 
