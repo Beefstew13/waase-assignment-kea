@@ -20,6 +20,7 @@ def main_menu():
     print()
 
     choice = input("""
+--------------------------------------------------
 Press 1 for Sales
 Press 2 for Warehouse
 Press Q to quit
