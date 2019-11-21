@@ -12,18 +12,20 @@ def login():
     print("Please enter password")
     getpassword = input()
     if getusername == username and getpassword == password:
+        print()
+        print('-'*50)
         print("Access Granted - Welcome to the Bikeshop System")
+        print('-'*50)
+        print()
         main_menu()
 
 def main_menu():
-    print('-'*50)
-    print()
-
     choice = input("""
 --------------------------------------------------
 Press 1 for Sales
 Press 2 for Warehouse
 Press Q to quit
+--------------------------------------------------
 
 Please enter your choice: """)
     if choice == "1":
