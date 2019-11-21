@@ -7,10 +7,8 @@ def main():
 def login():
     username = "BikeShopOwner"
     password = "Hello1234"
-    print("Please enter username")
-    getusername = input()
-    print("Please enter password")
-    getpassword = input()
+    getusername = input("Please enter username")
+    getpassword = input("Please enter password")
     if getusername == username and getpassword == password:
         print()
         print('-'*50)
@@ -22,9 +20,9 @@ def login():
 def main_menu():
     choice = input("""
 --------------------------------------------------
-Press 1 for Sales
-Press 2 for Warehouse
-Press Q to quit
+Press 1 for Sales\n
+Press 2 for Warehouse\n
+Press Q to quit\n
 --------------------------------------------------
 
 Please enter your choice: """)
