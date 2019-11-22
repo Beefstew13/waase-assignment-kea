@@ -1,10 +1,10 @@
-# This is the first menu the user will see when logging into the program
+
 import sys
 
-def main():
+def main(): # When main is called, it calls the login funciton
     login()
 
-def login():
+def login(): # To enter the main_menu the input has to be the same as Username and Password
     username = "BikeShopOwner"
     password = "Hello1234"
     getusername = input("""
@@ -26,6 +26,9 @@ Please enter password
         print('-'*50)
         print()
         main_menu()
+    else:
+        print("Username or password is incorrect. Try again! ")
+        login() # Runs the login function until correct username and password is typed
 
 def main_menu():
     choice = input("""
@@ -47,4 +50,5 @@ Please enter your choice: """)
         print("Please try again")
         main_menu()
 
+# This is the first menu the user will see when logging into the program
 main()
