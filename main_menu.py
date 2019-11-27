@@ -1,5 +1,4 @@
-
-import sys
+from ui import UserInterface
 
 def main(): # When main is called, it calls the login funciton
     login()
@@ -31,16 +30,25 @@ Please enter password
         login() # Runs the login function until correct username and password is typed
 
 def main_menu():
+    ui = UserInterface
     choice = input("""
 --------------------------------------------------
-Press 1 for Sales\n
-Press 2 for Warehouse\n
+Press 1 To Add New Stock\n
+Press 2 To Check the Current Stock\n
+Press 3 To Check Previous Sales and Finance\n
+Press 4 To Make a Purchase\n
 Press Q to quit\n
 --------------------------------------------------
 
 Please enter your choice: """)
     if choice == "1":
-        import sales
+        model = input("Please enter model")
+        price = input("Please enter price")
+        colour = input("Please enter colour")
+        size = input("Please enter size")
+        gender = input("Please enter gender")
+        quantity = input("Please enter quantity")
+        ui.add_new_bike (model, price, colour, size, gender, quantity) #sends arguments to the method
     elif choice == "2":
         import main
     elif choice == "Q" or choice == "q":

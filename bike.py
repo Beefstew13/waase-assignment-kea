@@ -28,13 +28,13 @@ class Bike:
         self.size = new_size
 
     def change_gender(self, new_gender):
-        self.gender = new_gender   
+        self.gender = new_gender
 
     def increase_quantity(self, quantity):
-        self.quantity += quantity
+        self.quantity += quantity #adds to existing increase_quantity
 
     def decrease_quantity(self, quantity):
-        self.quantity -= quantity
+        self.quantity -= quantity # decrease that quantity
 
 
     def print_bike_info(self):
@@ -47,7 +47,7 @@ class Bike:
         print("Size in quantity:", self.quantity)
         print('-'*50)
 
-    def toJSON(self):
+    def toJSON(self): #converts objects to dictionary
         return {
             'model': self.model,
             'price': self.price,

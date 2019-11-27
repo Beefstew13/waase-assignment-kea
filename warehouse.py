@@ -38,13 +38,13 @@ class Warehouse:
         bike.print_bike_info()
 
 
-    def add_item(self,model,price,description,count):
-        if self.find_bike_by_model(model)!= -1:
+    def add_item(self,model,price,colour,size, gender,quantity):
+        if self.find_bike_by_model(model)!= -1: #find bike by model
             print(f"This bike {model} exists")
-        else:
-            bike = Bike(model,price,description,count)
-            self.stock.append(bike)
-            self._save_stock()
+        else: #if ti doesn't exist it is creating new object
+            bike = Bike(model,price,colour, size, gender, quantity)
+            self.stock.append(bike) #append to stock
+            self._save_stock() #save to stock
 
     def change_price(self,model,new_price):
         index  = self.find_bike_by_model(model)
