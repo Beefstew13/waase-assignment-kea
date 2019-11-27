@@ -30,7 +30,7 @@ Please enter password
         login() # Runs the login function until correct username and password is typed
 
 def main_menu():
-    ui = UserInterface
+    ui = UserInterface()
     choice = input("""
 --------------------------------------------------
 Press 1 To Add New Stock\n

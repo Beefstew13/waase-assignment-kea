@@ -11,6 +11,10 @@ class UserInterface:
     def add_new_bike(self,model,price,colour,size,gender,quantity):
         self.warehouse.add_item(model,price,colour,size,gender,quantity)
 
+    def display_stock(self):
+        self.warehouse.print_all_items()
+
+
     #def add_bike_to_cart(self,model,quantity):
         #if self.warehouse.can_buy(model,quantity) :
             #self.sales.add_to_cart(model,quantity)
@@ -27,7 +31,7 @@ class UserInterface:
 
     # if choice =2 '1':
     #     model = input("enter")
-    # 
+    #
     # ui.add_new_bike(model,price,colour,size,gender,quantity)
     #
     # if choice == '2'
