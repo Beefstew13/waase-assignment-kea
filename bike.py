@@ -4,11 +4,13 @@ import json
 
 class Bike:
 
-    def __init__(self, model, price, description, count):
+    def __init__(self, model, price, colour, size, gender, quantity):
         self.model = model
         self.price = price
-        self.description = description
-        self.count = count
+        self.colour = colour
+        self.size = size
+        self.gender = gender
+        self.quantity = quantity
 
 
     def change_price(self, new_price):
@@ -19,29 +21,40 @@ class Bike:
     def change_model(self, new_model):
         self.model = new_model
 
-    def change_description(self, new_description):
-        self.description = new_description
+    def change_colour(self, new_colour):
+        self.colour = new_colour
 
-    def increase_count(self, amount):
-        self.count += amount
+    def change_size(self, new_size):
+        self.size = new_size
 
-    def decrease_count(self, amount):
-        self.count -= amount
+    def change_gender(self, new_gender):
+        self.gender = new_gender   
+
+    def increase_quantity(self, quantity):
+        self.quantity += quantity
+
+    def decrease_quantity(self, quantity):
+        self.quantity -= quantity
+
 
     def print_bike_info(self):
         print('-'*50)
         print("Model:", self.model)
-        print("price:", self.price)
-        print("description:", self.description)
-        print("count:", self.count)
+        print("Price in DKK:", self.price)
+        print("Colour:", self.colour)
+        print("Size in cm:", self.size)
+        print("M for Mænd eller K for Kvinde:", self.gender)
+        print("Size in quantity:", self.quantity)
         print('-'*50)
 
     def toJSON(self):
         return {
             'model': self.model,
             'price': self.price,
-            'description': self.description,
-            'count': self.count
+            'colour': self.colour,
+            'size': self.size,
+            'gender': self.gender,
+            'quantity': self.quantity
         }
 
 
@@ -49,9 +62,11 @@ if __name__ == '__main__':
     bike = Bike('my Bike', 100, 'bla', 123)
     bike2 = Bike(**{
         'model':'my bike 2',
-        'price':46,
-        'description':'some description',
-        'count':45
+        'price':500,
+        'colour':'yellow',
+        'size':150,
+        'gender':'K',
+        'count':10
     })
 
     f = open('new_bikes.json', "w")  # removes whole content of the file

@@ -1,9 +1,9 @@
 import json
 
 
-f = open("bikes.json", "r")
+f = open("bikes.json", "r") #reads from JSON bike file
 
-content = f.read()
+content = f.read() #assigns the content of the file to a variable
 if content:
     stock = json.loads(content) # converts content of json file to python list of dictionaries
 else:
@@ -15,54 +15,52 @@ def info_bike(bike):
     print('-'*50)
     print("Model:", bike['model'])
     print("price:", bike['price'])
-    print("description:", bike['description'])
-    print("count:", bike['count'])
+    print("colour:", bike['colour'])
+    print("size:", bike['size'])
+    print("gender:", bike['gender'])
+    print("quantity:", bike['quantity'])
     print('-'*50)
 
 
 def menu():
-    print()
-    print('-'*50)
-    print()
-    print("Press 1: To add stock\n")
-    print("Press 2: To check stock\n")
-    print("Press 3: To enter purchase\n")
-    print("Press q: To quit the program\n")
-    print('-'*50)
-    print()
-    return input("Please enter your choice: ")
+    print("Press 1: To add stock. ")
+    print("Press 2: To check stock. ")
+    print("Press 3: To enter a customer purchase. ")
+    print("Press q: To quit the program. ")
+    return input("What would you like to do? ")
 
 
 # DRY Don't repeat yourself!
 while True:
     choice = menu()
     if choice == "1":
-        print("""
---------------------------------------------------
-
-Please enter this information:
-
---------------------------------------------------
-""")
-        model = input("Model:\n")
+        print("Please enter this information:")
+        model = input("Model: ")
         # result of input is string so I need cast it to the float
-        b = float(input("\nPrice:\n"))
-        c = input("\nDescirption:\n")
-        d = int(input("\nCount:\n"))  # cast to integer
+        price = float(input("Price in DKK: ")) #cast to float
+        colour = input("Colour: ")
+        size = input("Size in cm: ")
+        gender = input("M for Mænd eller K for Kvinde: ")
+        quantity = int(input("Quantity: "))  # cast to integer
 
         bike = {
             "model": model,
-            "price": b,
-            "description": c,
-            "count": d
+            "price": price,
+            "colour": colour,
+            "size": size,
+            "gender": gender,
+            "quantity": quantity
         }
         stock.append(bike)
-        print("Successfully added new bike(s)!")
+        print("Successfully added new bike!")
         info_bike(bike)
 
     elif choice == "2":
         for item in stock:
             info_bike(item)
+
+    elif choice == "3":
+        import sales
 
     elif choice == "q":
         f = open("bikes.json", "w") #removes whole content of the file

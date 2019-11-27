@@ -1,5 +1,5 @@
 import json # Imports JSON module
-from bike import Bike
+from bike import Bike #import class Bike from file bike
 class Warehouse:
 
     def __init__(self):
