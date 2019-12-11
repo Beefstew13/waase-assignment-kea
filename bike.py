@@ -6,11 +6,11 @@ class Bike:
 
     def __init__(self, model, price, colour, size, gender, quantity):
         self.model = model
-        self.price = price
+        self.price = float(price)
         self.colour = colour
         self.size = size
         self.gender = gender
-        self.quantity = quantity
+        self.quantity = int(quantity)
 
 
     def change_price(self, new_price):
