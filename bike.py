@@ -2,6 +2,7 @@
 import json
 
 
+
 class Bike:
 
     def __init__(self, model, price, colour, size, gender, quantity):
