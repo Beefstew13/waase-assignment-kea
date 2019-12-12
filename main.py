@@ -3,7 +3,7 @@ import json
 
 f = open("bikes.json", "r") #reads from JSON bike file
 
-content = f.read() #assigns the content of the file to a variable
+content = f.read() # assigns the content of the file to a variable
 if content:
     stock = json.loads(content) # converts content of json file to python list of dictionaries
 else:
